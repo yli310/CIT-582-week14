@@ -113,11 +113,11 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
-    w3 = Web3()
+
     
 
     mnemonic_phrase = 'village token veteran follow tattoo brick .....'
-    acct = w3.eth.account.from_mnemonic(mnemonic_secret)
+    acct = g.w3.eth.account.from_mnemonic(mnemonic_secret)
 
     eth_pk = acct._address
 
