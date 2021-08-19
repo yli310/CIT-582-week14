@@ -114,8 +114,11 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
 
-    eth_sk = b'\xcc\xadGK,I@4A\xe1\x06\xfb,\xa7\xe0eHKMRer\x95\x16\xe8\xa6\xa7~\xb1\x93\xc3\x0b'
-    eth_pk = '0x487035502D920Cf98fCaC17B5D260976F0c07676'
+
+
+    eth_pk = '0x04307F37286361Ad0B5E9d59b7d424051aF64D57'
+
+    eth_sk = '16fc7fbbcc6e972ddedbb47aed301ed8ba11c9a72d413ad4d85598d9dea965d1'
     return eth_sk, eth_pk
   
 def fill_order(order, txes=[]):
