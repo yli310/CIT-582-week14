@@ -113,8 +113,9 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
-    g.w3.eth.account.enable_unaudited_hdwallet_features()
     print("ok")
+    g.w3.eth.account.enable_unaudited_hdwallet_features()
+    
     acct,mnemonic_secret = g.w3.eth.account.create_with_mnemonic()
     print(mnemonic_secret)
     acct = g.w3.eth.account.from_mnemonic(mnemonic_secret)
@@ -216,7 +217,7 @@ def execute_txes(txes):
   
 @app.route('/address', methods=['POST'])
 def address():
-    print("start address")
+    #print("start address")
     if request.method == "POST":
         content = request.get_json(silent=True)
         if 'platform' not in content.keys():
@@ -225,7 +226,7 @@ def address():
         if not content['platform'] in ["Ethereum", "Algorand"]:
             print(f"Error: {content['platform']} is an invalid platform" )
             return jsonify(f"Error: invalid platform provided: {content['platform']}"  )
-        print("success until here")
+        #print("success until here")
         # The endpoint should return a (JSON formatted) response with the exchange server’s public-key on the specified platform (either ‘Ethereum’ or ‘Algorand’).
         if content['platform'] == "Ethereum":
             #Your code here
