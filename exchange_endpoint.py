@@ -108,18 +108,12 @@ def get_algo_keys():
     return algo_sk, algo_pk
 
 
-def get_eth_keys(filename = "eth_mnemonic.txt"):
-    
-    
+def get_eth_keys(filename="eth_mnemonic.txt"):
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
-    
-    w3 = connect_to_eth()
-    mnemonic_secret = "mimi"
-    acct = g.w3.eth.account.from_mnemonic(mnemonic_secret)
+    eth_sk = b'\xcc\xadGK,I@4A\xe1\x06\xfb,\xa7\xe0eHKMRer\x95\x16\xe8\xa6\xa7~\xb1\x93\xc3\x0b'
+    eth_pk = '0x487035502D920Cf98fCaC17B5D260976F0c07676'
 
-    eth_pk = acct._address
-    eth_sk = acct._private_key
     return eth_sk, eth_pk
   
 def fill_order(order, txes=[]):
